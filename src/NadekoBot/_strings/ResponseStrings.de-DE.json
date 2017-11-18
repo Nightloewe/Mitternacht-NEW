@@ -612,6 +612,8 @@
     "utility_invalid_value": "Ungültiger {0} Wert.",
     "utility_joined_discord": "Discord beigetreten",
     "utility_joined_server": "Server beigetreten",
+    "administration_joined_discord": "Discord beigetreten",
+    "administration_joined_server": "Server beigetreten",
     "utility_listservers": "ID: {0}\nMitglieder: {1}\nID des Besitzers: {2}",
     "utility_listservers_none": "Keine Server auf dieser Seite gefunden.",
     "utility_list_of_repeaters": "Liste der Wiederholer",
