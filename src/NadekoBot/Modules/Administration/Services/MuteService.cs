@@ -167,7 +167,7 @@ namespace NadekoBot.Modules.Administration.Services
 
         public async Task<IRole> GetMuteRole(IGuild guild)
         {
-            const string defaultMuteRoleName = "nadeko-mute";
+            const string defaultMuteRoleName = "Muted";
 
             var muteRoleName = GuildMuteRoles.GetOrAdd(guild.Id, defaultMuteRoleName);
 
@@ -189,7 +189,8 @@ namespace NadekoBot.Modules.Administration.Services
             {
                 try
                 {
-                    if (!toOverwrite.PermissionOverwrites.Select(x => x.Permissions).Contains(denyOverwrite))
+                    if (!toOverwrite.PermissionOverwrites.Any(x => x.TargetId == muteRole.Id 
+                        && x.TargetType == PermissionTarget.Role))
                     {
                         await toOverwrite.AddPermissionOverwriteAsync(muteRole, denyOverwrite)
                                 .ConfigureAwait(false);
